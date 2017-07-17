@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root name="事务流" package="com.zyl.control" >
+	<!-- ********************演示Demo*********************** -->
+	<viewDemo modelName="Demo" actionName="view">
+		<input>
+			<Guid validations="LinkWithModel:Demo"/>
+		</input>
+		<output>
+			<Guid />
+			<Name />
+			<Brief />
+			<PostDate />
+		</output>
+	</viewDemo>
+	<editDemo modelName="Demo"  actionName="edit" output="viewDemo" validations="NeedLogin" updateModel="Demo">
+		<input>
+			<Guid />
+			<Name />
+			<Brief />
+		</input>
+	</editDemo>
+	<deleteDemo modelName="Demo" actionName="delete" updateModel="Demo">
+		<input>
+			<Guid />
+		</input>
+	</deleteDemo>
+	<listByPageDemo modelName="Demo" actionName="listByPage" output="viewDemo" condition="where Name like ${Name}">
+		<input>
+			<Name defaultValue="%"/>
+		</input>
+	</listByPageDemo>
+	<!-- ***********************行为************************** -->
+	<viewBehavior modelName="Behavior" actionName="view">
+		<input>
+			<Guid />
+		</input>
+		<output>
+			<Guid />
+			<Name />
+			<BehaviorCode />
+			<Brief />
+			<PostDate />
+		</output>
+	</viewBehavior>
+	<editBehavior modelName="Behavior" actionName="edit" output="viewBehavior">
+		<input>
+			<Guid />
+			<Name />
+			<BehaviorCode />
+			<Brief />
+		</input>
+	</editBehavior>
+	<listByPageBehavior modelName="Behavior" actionName="listByPage" condition="where Name like ${Name} or Brief like ${Brief}" output="viewBehavior" >
+		<input>
+			<Name />
+			<Brief />
+		</input>
+	</listByPageBehavior>
+	<!-- *****************************流程***************************** -->
+	<viewProcess modelName="Process" actionName="listByPage">
+		<input>
+			<Guid />
+		</input>
+		<output>
+			<Guid />
+			<Name />
+			<Code />
+			<Brief />
+			<PostDate />
+		</output>
+	</viewProcess>
+	<editProcess modelName="Process" actionName="edit" output="viewProcess">
+		<input>
+			<Guid />
+			<Name />
+			<Code />
+			<Brief />
+		</input>
+	</editProcess>
+	<listByPageProcess modelName="Process" actionName="listByPage" output="viewProcess" condition="Name like ${Name}"> 
+		<input>
+			<Name />
+		</input>
+	</listByPageProcess>
+	<!-- *************************角色**************************** -->
+	<viewRole modelName="Role" actionName="view">
+		<input>
+			<Guid />
+		</input>
+		<output>
+			<Guid />
+			<Name />
+			<Code />
+			<Brief />
+		</output>
+	</viewRole>
+	<editRole modelName="Role" actionName="edit" output="viewRole" validations="NeedLogin">
+		<input>
+			<Guid />
+			<Name />
+			<Code />
+			<Brief />
+		</input>
+	</editRole>
+	<listByPageRole modelName="Role" actionName="listByPage" output="viewRole" condition="where Name=${Name}">
+		<input>
+			<Name />
+		</input>
+	</listByPageRole>
+	
+	<viewAuthorityRole modelName="AuthorityRole" actionName="view" >
+		<input>
+			<Guid />
+		</input>
+		<output>
+			<Guid />
+			<BehaviorId />
+			<BehaviorName sourceModel="Behavior.Name" sourceId="BehaviorId:Behavior.Guid"/>
+			<RoleId />
+			<RoleName sourceModel="Role.Name" sourceId="RoleId:Role.Guid"/>
+			<PostDate />
+		</output>
+	</viewAuthorityRole>
+	<editAuthorityRole  modelName="AuthorityRole" actionName="edit" output="viewAuthorityRole">
+		<input>
+			<Guid />
+			<BehaviorId />
+			<roleId />
+		</input>
+	</editAuthorityRole>
+	<listByPageAuthorityRole  modelName="AuthorityRole" actionName="listByPage" output="viewAuthorityRole" >
+	
+	</listByPageAuthorityRole>
+</root>
+
+

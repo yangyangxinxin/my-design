@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root name="用户信息" package="com.zyl.control" >
+	
+	
+	<view modelName="Consumer">
+		<input>
+			<Guid validations="LinkWithModel:Consumer" />
+		</input>
+		<output>
+			<Guid />
+			<Name />
+			<Sex />
+			<Birth />
+			<UserName />
+			<PostDate />
+			<Email />
+			<Phone />
+		</output>
+	</view>
+	
+	<login modelName="Consumer" output="view" actionName="search" condition="where UserName=${UserName} And Password=${Password}">
+		<input>
+			<UserName />
+			<Password />
+		</input>
+	</login>
+	
+	<consumerListByPage modelName="Consumer" actionName="listByPage">
+		<output>
+			<Guid />
+			<Name />
+			<Sex />
+			<Birth />
+			<UserName />
+			<PostDate />
+		</output>
+	</consumerListByPage>
+	
+	<consumerListByPageList  modelName="Consumer" actionName="listByPage" condition="where Guid=${Guid}" output="view">
+		<input>
+			<Guid validations="LinkWithModel:.Consumer" />
+		</input>
+	</consumerListByPageList>
+	
+	<edit modelName="Consumer" actionName="edit" condition="where Guid=${Guid}" output="view" validations="NeedConsumer">
+		<input>
+			<Guid validations="LinkWithModel:.Consumer" />
+			<Name />
+			<Sex />
+			<Birth />
+		</input>
+	</edit>
+	
+	<loginOut modelName="Consumer">
+	
+	</loginOut>
+	
+	<listByPage modelName="Consumer" condition="where Name like ${Name}" output="view">
+		<input>
+			<Name defaultValue="%"/>
+		</input>
+	</listByPage>
+	
+	<userlistByPage modelName="User" actionName="listByPage">
+		<output>
+			<UserName />
+			<Password />
+			<Sex />
+			<Guid />
+		</output>
+	</userlistByPage>
+</root>
+
+

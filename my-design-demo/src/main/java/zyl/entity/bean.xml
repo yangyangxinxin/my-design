@@ -1,0 +1,50 @@
+<root>
+	<!-- 用户表 -->
+	<bean name="Consumer" primayKey="Guid">
+		<property>
+			<Guid />
+			<UserName />
+			<Password />
+			<Name />
+			<Sex />
+			<Email />
+			<Phone />
+			<Birth fieldsTpye="data"/>
+			<Ip />
+			<PostDate fieldsTpye="data"/>
+			<ValidateMD />
+		</property>
+	</bean>
+	<!-- 接口访问记录表 -->
+	<bean name="Visitlog" primayKey="Guid">
+		<property>
+			<Guid/>
+			<ClassName />
+			<ClassId />
+			<Url />
+			<Para />
+			<UserId />
+			<Ip />
+			<PostDate fieldsTpye="data"/>
+			<ValidateMD />
+		</property>
+	</bean>
+	<bean name="Manager" primayKey="Guid" >
+		<property>
+			<Guid/>
+			<UserName />
+			<Password />
+			<Sex />
+			<Email />
+			<Phone />
+			<Birth fieldsTpye="data"/>
+			<Ip />
+			<PostDate fieldsTpye="data"/>
+			<ValidateMD />
+			<IsSuper />
+		</property>
+	</bean>
+	
+</root>
+
+

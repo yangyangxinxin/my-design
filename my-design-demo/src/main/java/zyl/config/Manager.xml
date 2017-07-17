@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root name="用户信息" package="com.zyl.control" >
+	<view modelName="Manager">
+		<input>
+			<Guid validations="LinkWithModel:Consumer" />
+		</input>
+		<output>
+			<Guid />
+			<Sex />
+			<Birth />
+			<UserName />
+			<PostDate />
+			<Email />
+			<Phone />
+		</output>
+	</view>
+	
+	<login modelName="Manager" actionName="search" condition="where UserName=${UserName} And Password=${Password}" output="view">
+		<input>
+			<UserName />
+			<Password />
+		</input>
+	</login>
+	
+	<loginOut modelName="Manager">
+	
+	</loginOut>
+</root>
+
+

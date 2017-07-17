@@ -1,0 +1,109 @@
+<root name="demo审核系统Bean配置">
+	<!-- 行为 -->
+	<bean name="Behavior" primayKey="Guid">
+		<property>
+			<Guid />
+			<Name />
+			<BehaviorCode />
+			<Brief />
+			<Ip />
+			<PostDate fieldsTpye="data"/>
+			<ValidateMD />
+		</property>
+	</bean>
+	<!-- 流程码 -->
+	<bean name="Process" primayKey="Guid">
+		<property>
+			<Guid />
+			<Name />
+			<Code />
+			<Brief />
+			<Ip />
+			<PostDate fieldsTpye="data"/>
+			<ValidateMD />
+		</property>
+	</bean>
+	<!-- 角色 -->
+	<bean name="Role" primayKey="Guid">
+		<property>
+			<Guid />
+			<Name />
+			<Code />
+			<Brief />
+			<Ip />
+			<PostDate fieldsTpye="data"/>
+			<ValidateMD />
+		</property>
+	</bean>
+	<!-- 流程 -->
+	<bean name="Processlog" primayKey="Guid">
+		<property>
+			<Guid />
+			<Name />
+			<Code />
+			<ProcessCode />
+			<Status />
+			<ClassName />
+			<ClassId />
+			<ReviewUserId />
+			<SpecifyReviewUserID />
+			<Ip />
+			<PostDate fieldsTpye="data"/>
+			<ValidateMD />
+		</property>
+	</bean>
+	<!-- 流程记录历史 -->
+	<bean name="HistoryProcesslog" primayKey="Guid">
+		<property>
+			<Guid />
+			<Name />
+			<Code />
+			<ProcessCode />
+			<Status />
+			<ClassName />
+			<ClassId />
+			<ReviewUserId />
+			<SpecifyReviewUserID />
+			<ProcessId />
+			<Ip />
+			<PostDate fieldsTpye="data"/>
+			<ValidateMD />
+		</property>
+	</bean>
+	
+	<!-- 角色行为分配 -->
+	<bean name="AuthorityRole" primayKey="Guid">
+		<property>
+			<Guid />
+			<Name />
+			<BehaviorId />
+			<RoleId />
+			<Ip />
+			<PostDate fieldsTpye="data"/>
+			<ValidateMD />
+		</property>
+	</bean>
+	<!-- 驳回信息 -->
+	<bean name="TunrDown" primayKey="Guid">
+		<property>
+			<Guid />
+			<PorecssId />
+			<Brief />
+			<Ip />
+			<PostDate fieldsTpye="data"/>
+			<ValidateMD />
+		</property>
+	</bean>
+	<bean name="Demo" primayKey="Guid">
+		<property>
+			<Guid />
+			<Name />
+			<Brief />
+			<Ip />
+			<PostDate fieldsTpye="data"/>
+			<ValidateMD />
+		</property>
+	</bean>
+</root>
+
+
